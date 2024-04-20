@@ -44,7 +44,7 @@ function App() {
 
   const handleApidata = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/v1/getAllData");
+      const response = await axios.get("https://pincode-dir.onrender.com/api/v1/getAllData");
       if (response?.data?.success) {
         setApidata(response?.data?.pincodes);
         setFilteredData(response?.data?.pincodes);
@@ -103,7 +103,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/api/v1/deletePin/${id}`);
+      const response = await axios.delete(`https://pincode-dir.onrender.com/api/v1/deletePin/${id}`);
       if (response?.data?.success) {
         console.log(response?.data?.message);
         setDeleted(true);
@@ -132,7 +132,7 @@ function App() {
 
   const handleUpdateSubmit = async () => {
     try {
-      const response = await axios.put("http://localhost:8080/api/v1/updatePin", updateFields);
+      const response = await axios.put("https://pincode-dir.onrender.com/api/v1/updatePin", updateFields);
       if (response?.data?.success) {
         console.log(response?.data?.message);
         setDeleted(true);
@@ -147,7 +147,7 @@ function App() {
   const handleCreateSubmit = async () => {
     try {
       console.log(updateFields1)
-      const response = await axios.post("http://localhost:8080/api/v1/create", updateFields1);
+      const response = await axios.post("https://pincode-dir.onrender.com/api/v1/create", updateFields1);
       if (response?.data?.success) {
         console.log(response?.data?.message);
         setDeleted(true);
